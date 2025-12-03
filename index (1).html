@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Open external</title>
+<script>
+    function openExternal() {
+
+        // Kiểm tra Safari (không phải Chrome/Firefox trên iOS)
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        if (isSafari) {
+            // Mở bằng Safari
+            window.location.href = "https://beacons.ai/tuimufeedback";
+        } else {
+            // Fallback mở SCORM hoặc link bạn muốn
+            window.location.href = "schorm://openapp"; 
+        }
+    }
+</script>
+</head>
+<body>
+    <h2>Mở bằng Safari hoặc SCORM</h2>
+    <button onclick="openExternal()" style="
+        padding: 12px 20px; font-size: 18px; border-radius: 8px;
+        border: none; background: black; color: white;">
+        Mở trang
+    </button>
+</body>
+</html>
